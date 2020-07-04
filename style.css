@@ -1,0 +1,684 @@
+html { 
+  background: url(images/bg_texture.png);  
+}
+body {
+  font-family: Arial,Helvetica,sans-serif !important;
+  font-size: 17px !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: white;
+  background-color: transparent;
+}
+
+a {
+  color: #00A2FF;
+  text-decoration: none;
+}
+p {
+  margin: 5px 0;
+}
+.ranking_table_wrapper{
+  height: 500px;
+  overflow: auto;
+}
+.sideAds {
+  position: fixed;
+  width: 120px;
+  height: 600px;
+  top: 50%;  
+  margin-top: -300px;
+  overflow: hidden;
+  z-index: 5000;
+}
+.error-box {
+  width:500px;
+  height:50px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin:-25px 0 0 -250px;
+  text-align: center;
+}
+.msg-success {
+  color: GREEN;
+  background-color: #cbe8db;
+  background-image: url('images/success-icon.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: GREEN;
+  padding: 15px 10px 15px 50px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.msg-error {
+  color: RED;
+  background-color: #ffd2d2;
+  background-image: url('images/error-icon.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: RED;
+  padding: 15px 10px 15px 50px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.msg-warn {
+  color: #dc8b00;
+  background-color: #FFFFDB;
+  background-image: url('images/warning-icon.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dc8b00;
+  padding: 15px 10px 15px 50px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.msg-info {
+  color: #0066ff;
+  background-color: #ddeeff;
+  background-image: url('images/info-icon.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0066ff;
+  padding: 15px 10px 15px 50px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.wrapper {	
+  height: 100%;
+  position: relative;
+}
+.ranktext {
+    position: relative;
+    top: 49px;
+    font-size: 11px;
+}
+/* Header Begin */
+.header{
+  width: 100%;
+  min-height: 385px;
+  background: url(images/bg_header.jpg) no-repeat center center;
+  background-size: cover;
+  border-bottom: 1px solid #61636B;
+  overflow: hidden;
+  padding-bottom: 65px;
+}
+.header_inner {
+  position: relative;
+  top: 45px;
+  max-width: 965px; 
+  margin: 0 auto;
+  z-index: 50;
+  padding: 0 10px;
+}
+.logo { 
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background: url(images/logo.png) no-repeat;
+  background-size: 150px 150px;
+  margin-top: -35px;
+}
+
+.version_box{
+  min-width: 320px;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.8);
+}
+.version_box_inner {
+  padding: 15px 15px 5px 15px;
+}
+.version_box h2 {
+  margin: 0;
+  display: inline-block;
+  color: orange;
+  text-shadow: -1px 1px 3px rgba(0, 0, 0, 1);
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.features h4 {
+	margin: 10px 0;
+}
+
+
+.ui-spacer {
+  display: inline-block;
+  padding: 4px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 12px;
+  vertical-align: middle;
+  font-weight: bold;
+  color: white;
+}
+
+.ui-spacer-green {
+  background-color: #58A85C;
+}
+.ui-spacer-blue {
+  background-color: #00A3FF;
+}
+.ui-spacer-orange {
+  background-color: #ff5c00;
+}
+.ui-spacer-red {
+  background-color: #ff0024;
+}
+
+
+.naviBar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 45px;  
+  text-align: center;
+  background-color: #FEFFFE;
+  z-index: 45;
+}
+.naviBar > ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  height: 100%;
+}
+.naviBar > ul > li {
+  display: inline-block;
+  text-align: center;
+  padding: 14px;  
+}
+.naviBar > ul > li.ui-active {
+  background-color: orange;
+}
+.naviBar > ul > li.ui-active > a {
+  color: white;
+}
+.naviBar > ul > li > a {
+  color: black;
+  text-decoration: none;
+  text-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+/* Content Begin */
+
+.content {
+  position: relative;
+  max-width: 965px;
+  margin: 20px auto;
+  margin-bottom: 280px;
+  padding: 0 10px;
+}
+
+.officerFirstLogin {
+  display: block;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+  vertical-align: top;
+  padding: 10px;
+  text-align: center;
+}
+
+.officerContent {
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: inline-flex;
+  width: 640px;
+  flex-wrap: wrap;
+
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+  vertical-align: top;
+}
+.officerBox {
+  width: 85px;
+  height: 100px;
+  background-color: #30302F;
+  margin: 10px 10px;
+  -webkit-box-shadow: -1px 1px 2px 0px rgba(0,0,0,1);
+  -moz-box-shadow: -1px 1px 2px 0px rgba(0,0,0,1);
+  box-shadow: -1px 1px 2px 0px rgba(0,0,0,1);  
+}
+.officerBox:nth-child(6n+1) {
+  margin: 10px 10px 10px 20px;
+}
+.officerBox > a > img {
+  width: 75px;
+  height: 65px;
+  padding: 5px 5px 0 5px;
+}
+.officerBox > a > span {
+  display: block; 
+  padding: 0 5px 5px 5px; 
+  width: 75px;
+  height: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #00A2FF;
+  font-size: 14px;
+}
+
+.gasstationContent {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  width: 780px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+  vertical-align: top;
+}
+.gasstationBox {
+  width: 360px;
+  height: 240px;
+  background-color: #30302F;
+  margin: 10px 10px;
+  -webkit-box-shadow: -1px 1px 2px 0px rgba(0,0,0,1);
+  -moz-box-shadow: -1px 1px 2px 0px rgba(0,0,0,1);
+  box-shadow: -1px 1px 2px 0px rgba(0,0,0,1);  
+}
+.gasstationBox:nth-child(2n+1) {
+  margin: 10px 10px 10px 20px;
+}
+.gasstationBox > img {
+  width: 350px;
+  height: 150px;
+  padding: 5px 5px 0 5px;
+}
+.gasstationBox > span {
+  display: block; 
+  padding: 0 5px 5px 5px; 
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #00A2FF;
+  font-size: 14px;
+}
+
+.officerLogin{
+  display: inline-block;
+  width: 275px;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+  vertical-align: top;
+  border: 1px solid orange;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.officerLogin > img {  
+  width: 130px;
+  height: 130px;
+}
+.ui-login-inline-wrapper {
+  display: inline-block;
+  width: 140px;
+  vertical-align: top;
+}
+.ui-login-inline-wrapper > div:nth-child(1) {
+  margin: 0 0 .5em 0;
+}
+.officerProfil_LastVisit{
+  display: block;
+  width: 300px;
+  vertical-align: top;
+  border: 1px solid orange;
+  border-bottom: 0;
+  border-left: 0;
+  margin: 0;
+  padding: 20px 0;
+}
+.officerProfil{
+  display: inline-block;
+  width: 100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+  vertical-align: top;
+  border: 1px solid orange;
+  margin: 0;
+  padding: 0;
+}
+.officerProfil > img {
+  margin: 5px 5px 0px 5px;
+  width: 300px;
+  height: 300px;
+}
+.officerProfil_inner {
+  width: 550px;
+  margin-top: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+.officerProfilForgot_inner {
+  margin: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.officerFeatures {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+  vertical-align: top;
+  border: 1px solid orange;
+}
+.officerFeatures_inner {
+  padding: 20px;
+}
+.officerFeatures_inner > h3 {
+  margin: 10px 0;
+}
+.officerFeatures_inner > h4 {
+  margin: 10px 0;
+}
+
+.policeRadio{ 
+  position: relative;
+  display: inline-block;
+  width: 295px;
+  height: 590px;
+  margin-top: 20px;
+  background-image: url("images/policeradio.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  float: right;
+}
+.policeRadio_box {
+  position: absolute;
+  top: 86px;
+  left: 29px;
+  width: 238px;
+  height: 422px;
+  background-color: #171817;  
+  overflow: hidden;
+  overflow-y: scroll; 
+}
+.policeRadio_box::-webkit-scrollbar {
+  width: 5px;
+}
+.policeRadio_box::-webkit-scrollbar-track {
+  background-color: black;
+  border: 1px solid black;
+}
+.policeRadio_box::-webkit-scrollbar-thumb {
+  background-color: #5B5D5B;  
+}
+.policeRadio_box::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+.policeRadio_inner {
+  padding: 5px;
+}
+.policeRadio_item {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+.policeRadio_item:last-of-type {
+  border-bottom: 0;
+}
+.officerRegister{
+  width: 325px;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+  vertical-align: top;
+  border: 1px solid orange;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.officerStatistic {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  width: 480px;
+  margin: 20px auto;
+  flex-wrap: wrap;  
+  vertical-align: top;
+}
+.officerStatisticBox{
+  width: 100px;
+  height: 100px;
+  margin: 0px 20px 0px 0px;
+  background-color: rgb(25, 26, 25);
+  background-color: rgba(25, 26, 25, 0.8);
+  -webkit-box-shadow: -1px 1px 2px 0px rgba(0,0,0,1);
+  -moz-box-shadow: -1px 1px 2px 0px rgba(0,0,0,1);
+  box-shadow: -1px 1px 2px 0px rgba(0,0,0,1); 
+}
+.officerStatisticBox span {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;  
+  padding-top: 5px;
+  text-align: center;
+}
+.officerStatisticBox div {
+  display: block;
+  height: 79px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 79px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.officerDashboardInfo {
+  display: inline-block;
+  width: 640px;
+  margin-top: 20px;
+
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.6);
+}
+.officerDashboardInfo_inner {
+  padding: 10px 20px;
+}
+
+/* Footer Begin*/
+
+.footer{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  width: 100%;
+  max-height: 100px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  background-color: #FEFFFE;
+  color: black;  
+}
+.footer-item {
+  width: 33.33%;
+  vertical-align: middle;
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+/* Button Design */
+
+.ui-btn {
+  background-color: #00A2FF;
+  border-color: #00A2FF;
+  color: #fff;
+  text-shadow: 0 1px 0 #059;
+  margin-right: .3125em;
+  margin-left: .3125em;
+  font-size: 16px;
+  margin: .5em 0;
+  padding: .7em 1em;
+  display: block;
+  position: relative;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ui-btn-a {
+  background-color: #00A2FF;
+  border-color: #00A2FF;
+  color: #fff;
+  text-shadow: 0 1px 0 #059;
+}
+.ui-btn-b {
+  background-color: #333;
+  border-color: #1f1f1f;
+  color: #fff;
+  text-shadow: 0 1px 0 #111;
+}
+.ui-input-text {
+  background-color: #fff !important;
+  border-color: #ddd !important;
+  color: #333;
+  text-shadow: 0 1px 0 #f3f3f3;  
+  margin-bottom: 5px !important;
+}
+
+.ui-input-btn input, .ui-input-btn a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background: #fff;
+  background: rgba(255,255,255,0);
+  filter: Alpha(Opacity=0);
+  opacity: .1;
+  font-size: 1px;
+  text-indent: -9999px;
+  z-index: 2;
+}
+textarea.ui-input-text {
+  overflow: auto;
+  resize: vertical;
+}
+.ui-corner-all {
+  -webkit-border-radius: 3px !important;
+  -moz-border-radius: 3px !important;
+  border-radius: 3px !important;
+  border-width: 1px !important;
+  border-style: solid !important; 
+  background-clip: padding-box !important;
+}
+.ui-btn.ui-corner-all {
+  -webkit-border-radius: .3125em;
+  border-radius: .3125em;
+}
+.ui-shadow-inset {
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+  -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+}
+
+.ui-input-text input, .ui-input-text a, textarea.ui-input-text {
+  padding: .4em;
+  line-height: 1.4em;
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: 0;
+  font-size: 14px !important;
+  margin: 0;
+  min-height: 2.2em;
+  text-align: left;
+  border: 0;
+  background: transparent none;
+  -webkit-appearance: none;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+}
+
+.ui-icon-login-img input, .ui-icon-password-img input, .ui-icon-email-img input{
+  padding-left: 45px;
+}
+.ui-icon-login-img:after {
+  background-image: url("js/images/icons-png/user-black.png");
+}
+.ui-icon-password-img:after {
+  background-image: url("js/images/icons-png/lock-black.png");
+}
+.ui-icon-email-img:after {
+  background-image: url("js/images/icons-png/mail-black.png");
+}
+.ui-input-text:after {
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  margin-top: -15px;
+  padding-right: 2px;
+  content: "";
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 100%;
+  filter: Alpha(Opacity=50);
+  opacity: .5;
+  border-right: 1px solid #a5a5a5;
+  z-index: 5;
+}
+.ui-input-officer input{
+  padding-left: 90px;
+}
+.ui-input-officer span {
+  font-size: 14px;
+  position: absolute;
+  top: 7px;
+  left: 45px;
+}
+.ui-input-officerregister span {
+  font-size: 18px;
+  position: absolute;
+  top: 9px;
+  left: 45px;
+}
+
+@media screen and (max-width: 960px) {
+  .officerContent{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    margin: 0 auto;
+  }
+  .officerLogin{
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .naviBar > ul {
+    margin-left: 145px;
+  }
+  .officerStatistic {
+  	margin: 20px auto;
+  }
+}

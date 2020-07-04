@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# High Priorität Seiten vor der Allgemeinen Seite
+
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !^/api.php
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^([A-Za-z0-9]+)?$ index.php?page=$1
+RewriteRule ^officer\/([A-Za-z0-9_+].*)?$ index.php?page=officer&userName=$1
